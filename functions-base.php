@@ -1872,7 +1872,7 @@ function _show_meta_boxes($post, $meta_box){
 
 
 /**
- * Custom function using some of WordPreses buit-ins. Only displays
+ * Custom function using some of WordPress's built-ins. Only displays
  * submenus of the link of the current page.
  * 
  * TODO: Clean up and make submenu exclusion optional.
