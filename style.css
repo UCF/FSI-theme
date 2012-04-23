@@ -147,6 +147,9 @@ div.span8 {
 	color: #000;
 	height: 100%;
 }
+	div.span8 h2 {
+		color: #000;
+	}
 	div.contentwrap {
 		padding: 150px 30px 30px 30px;
 		max-width: 75%;
