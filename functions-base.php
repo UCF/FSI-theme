@@ -1283,48 +1283,6 @@ function get_custom_post_type($name){
 }
 
 
-/**
- * Wraps wordpress' native functions, allowing you to get a menu defined by
- * its location rather than the name given to the menu.  The argument $classes
- * lets you define a custom class(es) to place on the list generated, $id does
- * the same but with an id attribute.
- *
- * If you require more customization of the output, a final optional argument
- * $callback lets you specify a function that will generate the output. Any
- * callback passed should accept one argument, which will be the items for the
- * menu in question.
- * 
- * @return void
- * @author Jared Lang
- **/
-function get_menu($name, $classes=null, $id=null, $callback=null){
-	$locations = get_nav_menu_locations();
-	$menu      = @$locations[$name];
-	
-	if (!$menu){
-		return "<div class='error'>No menu location found with name '{$name}'. Set up menus in the <a href='".get_admin_url()."nav-menus.php'>admin's appearance menu.</a></div>";
-	}
-	
-	$items = wp_get_nav_menu_items($menu);
-	
-	if ($callback === null){
-		ob_start();
-		?>
-		<ul<?php if($classes):?> class="<?=$classes?>"<?php endif;?><?php if($id):?> id="<?=$id?>"<?php endif;?>>
-			<?php foreach($items as $key=>$item): $last = $key == count($items) - 1;?>
-			<li<?php if($last):?> class="last"<?php endif;?>><a href="<?=$item->url?>"><?=$item->title?></a></li>
-			<?php endforeach;?>
-		</ul>
-		<?php
-		$menu = ob_get_clean();
-	}else{
-		$menu = call_user_func($callback, array($items));
-	}
-	
-	return $menu;
-	
-}
-
 
 /**
  * Creates an arbitrary html element.  $tag defines what element will be created
@@ -1911,5 +1869,78 @@ function _show_meta_boxes($post, $meta_box){
 	<?php endif;?>
 	<?php
 }
+
+
+/**
+ * Custom function using some of WordPreses buit-ins. Only displays
+ * submenus of the link of the current page.
+ * 
+ * TODO: Clean up and make submenu exclusion optional.
+ *
+ **/
+function get_menu($name, $classes=null, $id=null, $top_level_only = False){
+	global $post;
+	
+	$locations = get_nav_menu_locations();
+	$menu			 = @$locations[$name];
+	
+	if (!$menu){
+		return "<div class='error'>No menu location found with name '{$name}'.</div>";
+	}
+	
+	$items = wp_get_nav_menu_items($menu);
+	
+	$output           = '';
+	$parent_ids       = array();
+	$top_level_obj_id = 0;
+	$top_count        = 0;
+	$show_num         = 0;
+	for($i = 0; $i < count($items);$i++) {
+		$item = $items[$i];
+		$prev = isset($items[$i - 1]) ? $items[$i - 1] : null;
+		$next = isset($items[$i + 1]) ? $items[$i + 1] : null;
+		$menu_item_parent = (int)$item->menu_item_parent;
+		
+		if($menu_item_parent == 0) {
+			$top_count++;
+			// Going all the way up
+			while(count($parent_ids) > 0) {
+				array_pop($parent_ids);
+				$output .= '</ul></li>';
+			}
+			$output .= '<li class="'.implode(' ', $item->classes).'"><a href="'.$item->url.'">'.$item->title.'</a>';
+			$top_level_obj_id = (int)$item->object_id;
+		} else if(!$top_level_only){
+			if($menu_item_parent == (int)$prev->menu_item_parent) {
+				// Same level
+				$output .= '<li class="'.implode(' ', $item->classes).'"><a href="'.$item->url.'">'.$item->title.'</a>';
+			} else if(in_array($menu_item_parent, $parent_ids)) {
+				// Going Up
+				while($menu_item_parent != $parent_ids[count($parent_ids) - 1]) {
+					array_pop($parent_ids);
+					$output .= '</li></ul>';
+				}
+			} else { // Going Down
+				array_push($parent_ids, $prev->ID);
+				$output .= '<ul class="__hide'.$top_count.'"><li class="'.implode(' ', $item->classes).'"><a href="'.$item->url.'">'.$item->title.'</a>';
+			}
+		}
+		if((int)$item->object_id == $post->ID) {
+			$show_num = $top_count;
+		}	
+	}
+	
+	while(count($parent_ids) > 0) {
+		array_pop($parent_ids);
+		$output .= '</ul></li>';
+	}
+	
+	$output = str_replace('class="__hide'.$show_num.'"', '', $output);
+	$output = preg_replace('/__hide\d+/', 'hide', $output);
+	
+	return '<ul id="'.$id.'" class="'.$classes.'">'.$output.'</ul>';
+}
+
+
 
 ?>
