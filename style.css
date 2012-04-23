@@ -13,7 +13,6 @@ html {
 
 body {
 	padding: 0;
-	height: 100%;
 	background: #0e0e0e url('static/img/fsi-bg-body-top.jpg') top center repeat-x;
 }
 
@@ -30,7 +29,8 @@ div.container-fluid {
 	
 }
 
-div.row-fluid {		
+div.row-fluid {	
+
 }
 
 #sidebar h1 {
@@ -150,8 +150,18 @@ div.span8 {
 	div.span8 h2 {
 		color: #000;
 	}
+	div article h2 {
+		font-weight: 200;
+		font-size: 32px;
+		line-height: 48px;
+	}
+	div#post-11 article h2 { /* change div#post-11 to slug of homepage when moving off of local wordpress install */
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 36px;
+	}
 	div.contentwrap {
-		padding: 150px 30px 30px 30px;
+		padding: 150px 30px 60px 30px;
 		max-width: 75%;
 	}
 	
@@ -159,7 +169,7 @@ div.span8 {
 /* Post lists */
 
 div.post_list {
-	overflow: auto;	
+	overflow: hidden;	
 	margin: 20px 0;
 }
 
@@ -173,3 +183,16 @@ div.post_list {
 		color: #000;	
 	}
 
+div#post_navigation {
+	clear: both;
+}
+	div#post_navigation span.leftnav {
+		float: left;
+	}
+	div#post_navigation span.rightnav {
+		float: right;
+	}
+	div#post_navigation span a {
+		color: #000;
+		font-weight: bold;
+	}
