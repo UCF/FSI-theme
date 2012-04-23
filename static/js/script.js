@@ -88,5 +88,7 @@ if (typeof jQuery != 'undefined'){
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
+		
+			
 	});
 }else{console.log('jQuery dependancy failed to load');}
