@@ -43,7 +43,7 @@
 					?>
 						<div class="post_list">
 							<?php if ( has_post_thumbnail() ) { ?>
-							  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb'); ?></a>
 							<?php } ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt(); ?>
