@@ -148,7 +148,7 @@ div.span8 {
 	height: 100%;
 }
 
-	div.span8 h2 {
+	div.span8 h2, div.span8 h3, div.span8 h4, div.span8 h5, div.span8 h6 {
 		color: #000;
 	}
 	div article h2 {
