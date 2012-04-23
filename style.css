@@ -84,13 +84,13 @@ div.widget_nav_menu ul.menu {
 			font-weight: 100;
 			letter-spacing: 1.5px;
 		}
-
+		
 		ul#menu-main-menu ul {
 			list-style-type: none;
 			margin: 5px 0 5px 8px;
 			border-left: 1px solid #fff;	
 		}
-			ul#menu-main-menu ul li a {
+			ul#menu-main-menu ul li a, ul#menu-main-menu ul li a:hover {
 				margin-left: 20px;
 				font-size: 22px;
 				line-height: 28px;	
