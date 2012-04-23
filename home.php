@@ -30,9 +30,13 @@
 					<?php the_content();?>
 					
 					<?php
-					$args = array( 'numberposts' => 3 );
-					$lastposts = get_posts( $args );
-					foreach($lastposts as $post) : setup_postdata($post); ?>
+					//Get 2 featured posts for the home page.  If no posts tagged as 'featured' exist, pull the 2 newest posts
+					$featured_query = new WP_Query( array('posts_per_page' => 2, 'tag' => 'featured') );
+					$newest_query = new WP_Query( array('posts_per_page' => 2) );
+					
+					if ( $featured_query->have_posts() ){
+						while ( $featured_query->have_posts() ) : $featured_query->the_post();
+					?>
 						<div class="post_list">
 							<?php if ( has_post_thumbnail() ) { ?>
 							  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
@@ -40,7 +44,23 @@
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt(); ?>
 						</div>
-					<?php endforeach; ?>
+					<?php	
+						endwhile;
+					}
+					else { 
+						while ( $newest_query->have_posts() ) : $newest_query->the_post();
+					?>
+						<div class="post_list">
+							<?php if ( has_post_thumbnail() ) { ?>
+							  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<?php } ?>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<?php the_excerpt(); ?>
+						</div>
+					<?php	
+						endwhile;
+					}
+					?>
 					
 				</article>
 			</div>
