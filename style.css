@@ -5,3 +5,160 @@ Github Theme URI: https://github.com/UCF/FSI-theme
 Version: v1.0.0
 */
 
+/* Main Styles */
+
+html {
+	height: 100%;	
+}
+
+body {
+	padding: 0;
+	height: 100%;
+	background: #0e0e0e url('static/img/fsi-bg-body-top.jpg') top center repeat-x;
+}
+
+div#backgroundwrap {
+	width: 100%;
+	height: 100%;
+	background: url('static/img/fsi-bg-body-bottom-fade.jpg') bottom center no-repeat;	
+	/*overflow: auto;*/
+}
+
+div.container-fluid {
+	padding-right: 0;
+	height: 100%;	
+	
+}
+
+div.row-fluid {		
+}
+
+#sidebar h1 {
+	width: 221px;
+	height: 111px;
+	text-indent: -9999px;
+	background: url('static/img/fsi-logo.png') center center no-repeat;	
+	margin-top: 20px;
+}
+
+
+/* Sidebar */
+
+div#sidebar {
+	color: #fff;
+	margin: 0 20px;
+	padding-bottom: 60px;
+	float: right;
+}
+
+h2.widgettitle {
+	color: #d68953;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;	
+}
+	
+div.widget_nav_menu ul.menu {
+	list-style-type: none;
+	margin: 0 0 30px 0;	
+}
+	div.widget_nav_menu ul.menu li {
+		line-height: 25px;	
+	}
+	div.widget_nav_menu ul.menu li a {
+		font-size: 16px;
+		font-weight: 400;
+		color: #fff;	
+	}
+
+	ul#menu-main-menu {
+		margin: 30px 0 40px 0;
+	}
+		ul#menu-main-menu li {
+			line-height: 34px;	
+		}
+		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
+			font-size: 28px;
+			font-weight: 100;
+			letter-spacing: 1.5px;
+		}
+
+		ul#menu-main-menu ul {
+			list-style-type: none;
+			margin: 5px 0 5px 8px;
+			border-left: 1px solid #fff;	
+		}
+			ul#menu-main-menu ul li a {
+				margin-left: 20px;
+				font-size: 22px;
+				line-height: 28px;	
+			}
+
+
+div.sidebar_social {
+	margin: 70px 0 30px 0;
+	width: 100%;
+	clear: both;
+	overflow: auto;
+}
+
+	a.sidebar_socialbtn {
+		display: block;
+		float: left;
+		margin: 0 10px 0 0;
+		text-indent: -9999px;
+		width: 36px;
+		height: 36px;
+		background: url('static/img/fsi-social-icons.png') no-repeat;	
+	}
+		a#sidebar_facebook {
+			background-position: 0px 0px;	
+		}
+		a#sidebar_twitter {
+			background-position: -36px 0px;
+		}
+
+address {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 200;	
+	letter-spacing: 1px;
+}
+
+
+/* Main Content */
+
+div#rightcol {
+	height: 100%;
+}
+
+div.span8 {
+	background-color: rgba(255,255,255,0.65);
+	color: #000;
+	height: 100%;
+}
+	div.contentwrap {
+		padding: 150px 30px 30px 30px;
+		max-width: 75%;
+	}
+	
+
+/* Post lists */
+
+div.post_list {
+	overflow: auto;	
+	margin: 20px 0;
+}
+
+	div.post_list img {
+		float: left;
+		border: 0;	
+		padding: 0 10px 10px 0;
+	}
+	
+	div.post_list h3 a, div.post_list h3 a:hover {
+		color: #000;	
+	}
+
