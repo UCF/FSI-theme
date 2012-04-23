@@ -31,8 +31,12 @@
 			
 			<div class="contentwrap page-content" id="<?=$post->post_name?>">
 				<article>
-					<h2><?php the_title();?></h2>
-					<?php the_content();?>
+					<h2><?php the_title(); ?></h2>
+					<?php
+					if ( has_post_thumbnail() ) { 
+						the_post_thumbnail( 'page-header-img', array('class' => 'page-header-img') );
+						} ?>
+					<?php the_content(); ?>
 					
 				</article>
 			</div>
