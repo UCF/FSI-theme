@@ -4,17 +4,25 @@
  **/
 ?>
 <?php get_header(); the_post();?>
-	<div class="row page-content" id="<?=$post->post_name?>">
-		<div class="span9">
-			<article>
-				<h1><?php the_title();?></h1>
-				<?php the_content();?>
-			</article>
-		</div>
-		
-		<div id="sidebar" class="span3">
+	<div class="span4">
+        <div id="sidebar">
 			<?=get_sidebar();?>
 		</div>
+	</div>
+	
+	<div class="span8">
+		
+		<div id="contentwrap">
+			
+			<div class="row page-content" id="<?=$post->post_name?>">
+				<article>
+					<h2><?php the_title();?></h2>
+					<?php the_content();?>
+				</article>
+			</div>
+			
+		</div>
+		
 	</div>
 	<?
 	if(get_post_meta($post->ID, 'page_hide_fold', True) != 'on'): 
