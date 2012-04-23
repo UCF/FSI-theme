@@ -34,6 +34,10 @@
 						the_post_thumbnail( 'page-header-img', array('class' => 'page-header-img') );
 						} ?>
 					</p>	
+					<?php if (get_post_type() == "person") {
+						$person_name = get_the_title();
+						//TODO: get individual person details and output them here
+					} ?>
 					<?php the_content();?>
 					
 				</article>
