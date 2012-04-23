@@ -530,16 +530,14 @@ class Person extends CustomPostType
 									<a href="<?=get_permalink($person->ID)?>"><?=$this->get_name($person)?></a>
 								</td>
 								<td class="job_title">
-									<a href="<?=get_permalink($person->ID)?>"><?=get_post_meta($person->ID, 'person_jobtitle', True)?></a>
+									<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
 								</td> 
 								<td class="phones">
-									<a href="<?=get_permalink($person->ID)?>">
 										<ul>
 											<? foreach($this->get_phones($person) as $phone) { ?>
 											<li><?=$phone?></li>
 											<? } ?>
 										</ul>
-									</a>
 								</td>
 								<td class="email">
 									<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?>
