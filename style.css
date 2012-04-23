@@ -85,6 +85,14 @@ div.widget_nav_menu ul.menu {
 			letter-spacing: 1.5px;
 		}
 		
+		/* Sub-menu show/hide by current page */
+		ul.sub-menu {
+			display: none;
+		}
+		li.current-menu-item ul {
+			display: visible !important;
+		}
+		
 		ul#menu-main-menu ul {
 			list-style-type: none;
 			margin: 5px 0 5px 8px;
