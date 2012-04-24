@@ -26,8 +26,12 @@ div#backgroundwrap {
 div.container-fluid {
 	padding-right: 0;
 	height: 100%;	
-	
-}
+}	
+	@media (max-width: 767px) {
+		div.container-fluid {
+			padding-left: 0px;
+		}
+	}
 
 div.row-fluid {	
 
@@ -50,6 +54,14 @@ div#sidebar {
 	padding-bottom: 60px;
 	float: right;
 }
+	@media (max-width: 767px) { /* Fix floating overlap issue at smaller browser size */
+		div.row-fluid div.span4 {
+			clear: right;
+		}
+		div#sidebar {
+			float: left;
+		}
+	}
 
 h2.widgettitle {
 	color: #d68953;
@@ -147,6 +159,11 @@ div.span8 {
 	color: #000;
 	height: 100%;
 }
+	@media (max-width: 767px) { /* Fix floating overlap issue at smaller browser size */
+		div.span8 {
+			clear:both;
+		}
+	}
 
 	div.span8 h2, div.span8 h3, div.span8 h4, div.span8 h5, div.span8 h6, div.span8 a {
 		color: #000;
@@ -169,6 +186,12 @@ div.span8 {
 		padding: 150px 30px 60px 30px;
 		max-width: 75%;
 	}
+		@media (max-width: 767px) {
+			div.contentwrap {
+				padding: 20px 20px 50px 20px;
+				max-width: 100%;
+			}
+		}
 	
 	div.contentwrap article p.header-img-wrap {
 		margin: 10px 0;
