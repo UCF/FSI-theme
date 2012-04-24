@@ -140,14 +140,9 @@ address {
 }
 
 div.navbar {
-	display: none;
+	max-width: 320px;
 }
 
-@media (max-width: 767px) {
-	div.navbar {
-		display: visible;
-	}
-}
 
 /* Main Content */
 
