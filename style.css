@@ -233,3 +233,13 @@ table.table-striped tr td.phones ul li {
 	margin: 0 0 15px -25px;
 	vertical-align: top;
 }
+
+/* Single Person posts */
+
+div#personnel-info {
+	margin: 20px 0;
+}
+	div#personnel-info ul li {
+		list-style-type: none;
+		margin-left: -25px;
+	}
