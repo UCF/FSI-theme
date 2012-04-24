@@ -741,8 +741,10 @@ function __init__(){
 	add_theme_support('post-thumbnails');
 	add_image_size('page-header-img', 595, 220, true);
 	add_image_size('personnel-img', 110, 128, false);	
-	register_nav_menu('header-menu', __('Header Menu'));
-	register_nav_menu('footer-menu', __('Footer Menu'));
+	register_nav_menu('main-nav', __('Main Navigation'));
+	register_nav_menu('secondary-nav-one', __('Secondary Nav 1'));
+	register_nav_menu('secondary-nav-two', __('Secondary Nav 2'));
+	register_nav_menu('secondary-nav-three', __('Secondary Nav 3'));
 	register_sidebar(array(
 		'name'          => __('Sidebar'),
 		'id'            => 'sidebar',
@@ -1947,6 +1949,23 @@ function get_person_meta($post_id)
 		
 <?
 	return ob_get_clean();
+}
+
+/**
+ * Get the title of a menu specified by it's slug
+ *
+ * @return string
+ * @author Chris Conover
+ **/
+function get_menu_title($name)
+{
+	$locations = get_nav_menu_locations();
+	if(isset($locations[$name])) {
+		$menu_id = $locations[$name];
+		if( ($term = get_term_by('id', $menu_id, 'nav_menu')) !== False) {
+			return $term->name;
+		}
+	}
 }
 
 
