@@ -1,14 +1,7 @@
 <?php get_header(); the_post();?>
-	<div class="span4">
-        <div id="sidebar">
-			
-			<a href="<?php print site_url(); ?>"><h1><?php $site_title = get_bloginfo('name'); print $site_title; ?></h1></a>
-			
-			<?php get_sidebar();?>
-			<?php get_sidebar_extras(); ?>
-			
-		</div>
-	</div>
+
+<?php get_sidebar();?>
+
 	
 	<div class="span8">
 			
