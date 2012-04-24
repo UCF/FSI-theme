@@ -2040,5 +2040,70 @@ function get_menu($name, $classes=null, $id=null, $top_level_only = False){
 }
 
 
+/**
+ * Wraps wordpress' native functions, allowing you to get a menu defined by
+ * its location rather than the name given to the menu.  The argument $classes
+ * lets you define a custom class(es) to place on the list generated, $id does
+ * the same but with an id attribute.
+ *
+ * Customized for mobile devices; uses Twitter Bootstrap 
+ * 
+ * @return void
+ * @author Jared Lang
+ * @author Jo Greybill
+ **/
+function get_mobile_menu($name, $classes=null, $id=null, $callback=null){
+	$locations = get_nav_menu_locations();
+	$menu      = @$locations[$name];
+	
+	if (!$menu){
+		return "<div class='error'>No menu location found with name '{$name}'. Set up menus in the <a href='".get_admin_url()."nav-menus.php'>admin's appearance menu.</a></div>";
+	}
+	
+	$items = wp_get_nav_menu_items($menu);
+	
+	if ($callback === null){
+		ob_start();
+		?>
+		
+		<div class="navbar">
+	    	<div class="navbar-inner">
+	    		<div class="container">
+
+	    			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	    			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    				<span class="icon-bar"></span>
+	    				<span class="icon-bar"></span>
+	    				<span class="icon-bar"></span>
+	    			</a>
+
+	    			<!-- Be sure to leave the brand out there if you want it shown -->
+	    			<a class="brand" href="#">Navigation</a>
+
+	    			<!-- Everything you want hidden at 940px or less, place within here -->
+	    			<div class="nav-collapse">
+	    				<ul class="nav"<?php if($id):?> id="<?=$id?>"<?php endif;?>>
+							<?php foreach($items as $key=>$item): $last = $key == count($items) - 1;?>
+								<li<?php if($last):?> class="last"<?php endif;?>><a href="<?=$item->url?>"><?=$item->title?></a></li>
+							<?php endforeach;?>
+						</ul>
+	    			</div>
+
+	    		</div>
+	    	</div>
+	    </div>
+		
+		<?php
+		$menu = ob_get_clean();
+	}else{
+		$menu = call_user_func($callback, array($items));
+	}
+	
+	return $menu;
+	
+}
+
+
+
 
 ?>
