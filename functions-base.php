@@ -740,6 +740,7 @@ function __init__(){
 	add_theme_support('menus');
 	add_theme_support('post-thumbnails');
 	add_image_size('page-header-img', 595, 220, true);
+	add_image_size('personnel-img', 110, 128, false);	
 	register_nav_menu('header-menu', __('Header Menu'));
 	register_nav_menu('footer-menu', __('Footer Menu'));
 	register_sidebar(array(
@@ -1867,6 +1868,85 @@ function _show_meta_boxes($post, $meta_box){
 	<p><?=$meta_box['helptxt']?></p>
 	<?php endif;?>
 	<?php
+}
+
+
+/**
+ * Output Social icons and company address.
+ * TODO: Have icons appear based on theme settings for facebook/twitter/etc and address (need to add an Address field in site settings.)
+ * 
+ * @author Jo Greybill
+**/
+
+function get_sidebar_extras() {
+	?>
+	
+	<div class="sidebar_social">
+        <a class="sidebar_socialbtn" id="sidebar_facebook" href="http://www.facebook.com/floridaspaceinstitute/">Facebook</a>
+        <a class="sidebar_socialbtn" id="sidebar_twitter" href="http://www.twitter.com/floridaspaceinstitute/">Twitter</a>
+    </div>
+    
+    <div>
+        <address>Florida Space Institute<br/>
+            12443 Research Parkway<br/>
+            Orlando, Florida 32333-3333<br/>
+            407-823-0000
+        </address>
+    </div>
+	
+<?php	
+}
+
+
+/**
+ * Get meta info for a person.
+ *
+ * @return string
+ * @author Chris Conover
+ * @author Jo Greybill 
+ **/
+function get_person_meta($post_id)
+{
+	$img    = get_the_post_thumbnail($post_id, 'full');
+	$title  = get_post_meta($post_id, 'person_jobtitle', True);
+	$phones = get_post_meta($post_id, 'person_phones', True);
+	$phones = ($phones != '') ? explode(',', $phones) : Array();
+	$email  = get_post_meta($post_id, 'person_email', True);
+	
+	ob_start()?>
+	
+		<h2><a href="../../personnel/">Personnel</a> &raquo; <?php the_title();?></h2>
+		
+		<div id="personnel-info" class="row">
+		
+			<div id="headshot" class="span-2">
+				<? if($img == '') {?>
+					<img src="<?=bloginfo('stylesheet_directory')?>/static/img/no-photo.jpg" alt="No photo available"/>
+				<? } else {?> 
+					<?=get_the_post_thumbnail($post_id, 'personnel-img')?>
+				<? } ?>
+			</div>
+			
+			<div id="details" class="span-6 last">
+				<h3><?=$title?></h3>
+				<ul>
+					<? foreach($phones as $phone) { ?>
+					<li>
+						<?=$phone?>
+					</li>
+					<? } ?>
+				</ul>
+				<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?>
+			</div>
+		</div>	
+		
+		<?php $content = get_the_content();
+		if ($content !== "") {
+			the_content();
+		} else { print "No information available."; } ?>
+		
+<?
+	return ob_get_clean();
 }
 
 
