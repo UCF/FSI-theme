@@ -15,7 +15,11 @@
 <h2 class="widgettitle"><?=get_menu_title('secondary-nav-three')?></h2>
 <?=get_menu('secondary-nav-three', 'menu', 'menu-educational-partners')?>
 
+<?=get_mobile_menu('main-nav'); ?>
+
 <?php get_sidebar_extras(); ?>
+
+
 
 	</div>
 </div>
