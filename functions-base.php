@@ -1500,27 +1500,6 @@ function header_links(){
 
 
 /**
- * Handles generating the script tags configured for this theme.
- *
- * @return string
- * @author Jo Greybill
- **/
-function header_scripts(){
-	$scripts      = Config::$scripts;
-	$scripts_html = array();
-	$defaults     = array();
-	
-	foreach($scripts as $script){
-		$script         = array_merge($defaults, $script);
-		$scripts_html[] = create_html_element('script', $script);
-	}
-	
-	$scripts_html = implode("\n", $scripts_html);
-	return $scripts_html;
-}
-
-
-/**
  * Generates a title based on context page is viewed.  Stolen from Thematic
  **/
 function header_title(){
