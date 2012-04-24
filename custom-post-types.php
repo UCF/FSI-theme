@@ -536,7 +536,7 @@ class Person extends CustomPostType
 										<ul>
 											<? foreach($this->get_phones($person) as $phone) { ?>
 											<li><?=$phone?></li>
-											<? } ?>
+											<?php } ?>
 										</ul>
 								</td>
 								<td class="email">
