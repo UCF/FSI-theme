@@ -139,6 +139,15 @@ address {
 	letter-spacing: 1px;
 }
 
+div.navbar {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	div.navbar {
+		display: visible;
+	}
+}
 
 /* Main Content */
 
