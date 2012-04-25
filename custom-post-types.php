@@ -479,19 +479,7 @@ class Person extends CustomPostType
 
 	public static function get_phones($person) {
 		$phones = get_post_meta($person->ID, 'person_phones', True);
-		//return ($phones != '') ? explode(',', $phones) : array();
-		$explodedPhonesHasVal = true;
-		if ($phones != '') {
-			$explodedPhones = array();
-			$explodedPhones = explode(',', $phones);
-			if (count($explodedPhones) > 0) { 
-				return $explodedPhones;
-				$explodedPhonesHasVal = true;
-			}
-		}
-		else if ($phones == "") { 
-			$explodedPhonesHasVal = false;
-		}
+		return ($phones != '') ? explode(',', $phones) : array();
 	}
 
 	public function objectsToHTML($people, $css_classes) {
@@ -553,7 +541,7 @@ class Person extends CustomPostType
 										</ul>
 								</td>
 								<td class="email">
-									<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : 'E-mail n/a') ?>
+									<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '') ?>
 								</td>
 							</tr>
 					<? } ?>
