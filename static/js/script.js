@@ -74,7 +74,6 @@ Generic.homeDimensions = function($){
 	
 	cls.uniformHeight();
 	
-	
 };
 
 if (typeof jQuery != 'undefined'){
