@@ -76,6 +76,16 @@ Generic.homeDimensions = function($){
 	
 };
 
+/* Remove empty table cells for tablets/phones */
+Generic.removeEmptyTableRows = function($) {
+	
+	/* Target empty ul's, primarily to remove empty lists written in Personnel lists */
+	$('td ul').filter(function() { return $.trim($(this).html()) === '' }).parent('td').remove();
+	
+	$('tr td').filter(function() { return $.trim($(this).html()) === '' }).remove();
+}
+
+
 if (typeof jQuery != 'undefined'){
 	jQuery(document).ready(function($) {
 		Webcom.slideshow($);
@@ -86,7 +96,8 @@ if (typeof jQuery != 'undefined'){
 		
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
-		//Generic.resizeSearch($);			
+		//Generic.resizeSearch($);
+		Generic.removeEmptyTableRows($);			
 			
 	});
 }else{console.log('jQuery dependancy failed to load');}
