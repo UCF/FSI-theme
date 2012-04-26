@@ -7,7 +7,7 @@
 			<div class="contentwrap page-content" id="home">
 				<article>
 					<h2>Welcome to the Florida Space Institute</h2>
-					<?php $home_content = get_page_by_title('Home'); print $home_content->post_content; ?>
+					<?php $home_content = get_page_by_title('Home'); echo (apply_filters('the_content',$home_content->post_content)); ?>
 					
 					<?php
 					//Get 2 featured posts for the home page.  If no posts tagged as 'featured' exist, pull the 2 newest posts
