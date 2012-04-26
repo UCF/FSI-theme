@@ -2,7 +2,7 @@
 Theme Name: FSI Theme
 Author: UCF Web Communications
 Github Theme URI: https://github.com/UCF/FSI-theme
-Version: v1.0.0
+Version: v0.1.0
 */
 
 /* Main Styles */
@@ -13,7 +13,7 @@ html {
 
 body {
 	padding: 0;
-	background: #0e0e0e url('static/img/fsi-bg-body-top.jpg') top center repeat-x;
+	background: #000 url('static/img/fsi-bg-body-top.jpg') top center repeat-x;
 }
 
 div#backgroundwrap {
