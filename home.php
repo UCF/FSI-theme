@@ -1,13 +1,13 @@
-<?php get_header(); the_post();?>
+<?php get_header(); ?>
 			
 <?=get_sidebar();?>
 	
 	<div class="span8">
 			
-			<div class="contentwrap page-content" id="<?=$post->post_name?>">
+			<div class="contentwrap page-content" id="home">
 				<article>
 					<h2>Welcome to the Florida Space Institute</h2>
-					<?php the_content();?>
+					<?php $home_content = get_page_by_title('Home'); print $home_content->post_content; ?>
 					
 					<?php
 					//Get 2 featured posts for the home page.  If no posts tagged as 'featured' exist, pull the 2 newest posts
