@@ -92,6 +92,13 @@ Generic.removeEmptyTableRows = function($) {
 	}
 }
 
+/* Get the body column's height to equal that of the body tag at desktop size */
+Generic.fullHeightCol = function($) {
+	if (Modernizr.mq("only all and (min-width: 767px)")) {
+		$('div.span8').css('height', ($('body').height()));
+	}
+}
+
 
 if (typeof jQuery != 'undefined'){
 	jQuery(document).ready(function($) {
@@ -105,6 +112,6 @@ if (typeof jQuery != 'undefined'){
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
 		Generic.removeEmptyTableRows($);			
-			
+		Generic.fullHeightCol($);	
 	});
 }else{console.log('jQuery dependancy failed to load');}
