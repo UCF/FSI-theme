@@ -15,7 +15,7 @@ Clear out all widgets from sidebar and other areas (Below the Fold sections are 
 
 Create a page called 'Home' and a page called 'News and Events'.  These must be named exactly to work correctly.
 
-Create a page called 'About'. Each subheader should have an id that corresponds to the site navigation (e.g., <h3 id="History">History</h3>).  See main navigation structure below.
+Create a page called 'About'. Each subheader should have an id that corresponds to the site navigation (e.g., < h3 id="History" >History< /h3 >).  See main navigation structure below.
 
 Create four new navigation menus: one for the main site navigation, one for Programs and Projects links, one for Educational Partners links, and one for Corporate Partners.
 
