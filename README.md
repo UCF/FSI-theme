@@ -21,7 +21,6 @@ Create four new navigation menus: one for the main site navigation, one for Prog
 
 
 Main navigation menu should use this structure:
-
 * About (page)
   * History (anchor link, #History)
   * Mission (anchor link, #Mission)
@@ -32,7 +31,7 @@ Main navigation menu should use this structure:
 * Seminars (page)
 * Contact (page)
 
-* Assign each navigation menu to the four provided menu slots:
+Assign each navigation menu to the four provided menu slots:
   * Main Navigation should be the main site navigation menu, 
   * Programs and Projects should be assigned to Secondary Nav 1,
   * Corporate Partners should be assigned to Secondary Nav 2,
