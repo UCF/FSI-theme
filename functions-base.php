@@ -2040,5 +2040,63 @@ function get_menu($name, $classes=null, $id=null, $top_level_only = False){
 }
 
 
+/**
+ * Alters output of WordPress captions to be Bootstrap-friendly.
+ * Caption wrapper divs are changed to max-width to be more flexible.
+ * Based on article c/o http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
+ * 
+ * @author Jo Greybill
+**/
+
+/* Alter the caption shortcode to use Bootstrap positioning classes and max-width */
+add_filter( 'img_caption_shortcode', 'bootstrap_caption', 10, 3 );
+
+function bootstrap_caption( $output, $attr, $content ) {
+
+	/* We're not worried abut captions in feeds, so just return the output here. */
+	if ( is_feed() )
+		return $output;
+
+	/* Set up the default arguments. */
+	$defaults = array(
+		'id' => '',
+		'align' => 'alignnone',
+		'width' => '',
+		'caption' => ''
+	);
+
+	/* Merge the defaults with user input. */
+	$attr = shortcode_atts( $defaults, $attr );
+
+	/* If the width is less than 1 or there is no caption, return the content wrapped between the [caption]< tags. */
+	if ( 1 > $attr['width'] || empty( $attr['caption'] ) )
+		return $content;
+
+	/* Set up the attributes for the caption <div>. */
+	$attributes = ( !empty( $attr['id'] ) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '' );
+	$align_attr = esc_attr( $attr['align'] );
+	switch ($align_attr) {
+		case "alignleft":
+			$align_attr = "pull-left";
+			break;
+		case "aligncenter":
+			$align_attr = "aligncenter"; /* Don't know of a centering class for Bootstrap so we'll leave this alone for now */
+			break;
+		case "alignright":
+			$align_attr = "pull-right";
+			break;
+	}
+	$attributes .= ' class="wp-caption ' . esc_attr( $align_attr ) . '"';
+	$attributes .= ' style="max-width: ' . esc_attr( $attr['width'] ) . 'px;width:100%;height:auto;"';
+
+	/* Set up caption output. */
+	$output = '<div' . $attributes .'>';
+	$output .= do_shortcode( $content );
+	$output .= '<p class="wp-caption-text">' . $attr['caption'] . '</p>';
+	$output .= '</div>';
+
+	return $output;
+}
+
 
 ?>

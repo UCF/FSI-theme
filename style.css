@@ -366,3 +366,11 @@ div#personnel-info {
 		list-style-type: none;
 		margin-left: -25px;
 	}
+	
+/* Image Captions/Galleries */
+
+p.wp-caption-text {
+	font-weight: bold;
+	font-size: 0.85em;
+	text-align: center;	
+}
