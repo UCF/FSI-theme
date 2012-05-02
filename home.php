@@ -1,3 +1,5 @@
+<?php if (function_exists('disallow_direct_load')):?>
+<?php disallow_direct_load('home.php');?>
 <?php get_header(); ?>
 			
 <?=get_sidebar();?>
@@ -49,3 +51,4 @@
 		
 	</div>
 <?php get_footer();?>
+<?php endif;?>
