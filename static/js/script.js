@@ -93,7 +93,7 @@ Generic.removeEmptyTableRows = function($) {
 
 /* Get the body column's height to equal that of the body tag at desktop size */
 Generic.fullHeightCol = function($) {
-	if (Modernizr.mq("only all and (min-width: 767px)")) {
+	if ( (Modernizr.mq("only all and (min-width: 767px)")) || (Modernizr.mq('only all') === false) ) {
 		$('div.span8').css('height', ($('body').height()));
 	}
 }
