@@ -1881,18 +1881,19 @@ function _show_meta_boxes($post, $meta_box){
 **/
 
 function get_sidebar_extras() {
+	$options = get_option(THEME_OPTIONS_NAME);
 	?>
 	
 	<div class="sidebar_social">
-        <a class="sidebar_socialbtn" id="sidebar_facebook" href="http://www.facebook.com/pages/Florida-Space-Institute-FSI/353593684667181">Facebook</a>
-        <a class="sidebar_socialbtn" id="sidebar_twitter" href="http://www.twitter.com/floridaspaceinstitute/">Twitter</a>
+        <a class="sidebar_socialbtn" id="sidebar_facebook" href="<?=$options['facebook_url']?>">Facebook</a>
+        <a class="sidebar_socialbtn" id="sidebar_twitter" href="<?=$options['twitter_url']?>">Twitter</a>
     </div>
     
     <div>
-        <address>Florida Space Institute<br/>
-            12443 Research Parkway<br/>
-            Orlando, Florida 32333-3333<br/>
-            407-823-0000
+        <address><?=$options['organization_name']?><br/>
+            <?=$options['organization_addr_str']?><br/>
+            <?=$options['organization_addr_csz']?><br/>
+            <?=$options['organization_phone']?>
         </address>
     </div>
 	

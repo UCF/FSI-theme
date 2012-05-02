@@ -213,6 +213,24 @@ Config::$theme_settings = array(
 			'description' => 'Your organization\'s name',
 			'value'       => $theme_options['organization_name'],
 		)),
+		new TextField(array(
+			'name'        => 'Organization Street Address',
+			'id'          => THEME_OPTIONS_NAME.'[organization_addr_str]',
+			'description' => 'Your organization\'s name',
+			'value'       => $theme_options['organization_addr_str'],
+		)),
+		new TextField(array(
+			'name'        => 'Organization City, State, ZIP',
+			'id'          => THEME_OPTIONS_NAME.'[organization_addr_csz]',
+			'description' => 'Your organization\'s address city, state, and ZIP code',
+			'value'       => $theme_options['organization_addr_csz'],
+		)),
+		new TextField(array(
+			'name'        => 'Organization Phone #',
+			'id'          => THEME_OPTIONS_NAME.'[organization_phone]',
+			'description' => 'Your organization\'s phone number',
+			'value'       => $theme_options['organization_phone'],
+		)),
 		new SelectField(array(
 			'name'        => 'Home Image',
 			'id'          => THEME_OPTIONS_NAME.'[site_image]',
