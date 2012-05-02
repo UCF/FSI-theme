@@ -47,9 +47,9 @@ div.row-fluid {
 
 #sidebar h1 {
 	width: 221px;
-	height: 111px;
+	height: 120px;
 	text-indent: -9999px;
-	background: url('static/img/fsi-logo.png') center center no-repeat;	
+	background: url('static/img/fsi-logo-white.png') center center no-repeat;	
 	margin-top: 20px;
 }
 
@@ -86,7 +86,7 @@ div#sidebar {
 	}
 
 h2.widgettitle {
-	color: #d68953;
+	color: #ABAED6;
 	font-weight: 100;
 	font-size: 16px;
 	line-height: 25px;
