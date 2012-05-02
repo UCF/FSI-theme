@@ -204,7 +204,10 @@ div.navbar {
 		div.navbar { display: visible; }
 		div#sidebar { padding-bottom: 0; }
 	}
-
+	div.navbar { /* stupid IE fix */
+		display:/*\**/none\9;
+	}
+	
 div#mobile_footer {
 	max-width: 320px;
 	margin: auto;
