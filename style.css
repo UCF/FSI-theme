@@ -38,6 +38,13 @@ div.row-fluid {
 
 }
 
+.pull-left {
+	padding: 0 10px 10px 0;
+}
+.pull-right {
+	padding: 0 0 10px 10px;
+}
+
 #sidebar h1 {
 	width: 221px;
 	height: 111px;
