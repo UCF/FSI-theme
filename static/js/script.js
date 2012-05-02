@@ -91,7 +91,11 @@ Generic.removeEmptyTableRows = function($) {
 	}
 }
 
-/* Get the body column's height to equal that of the body tag at desktop size */
+/**
+ * Get the body column's height to equal that of the body tag at desktop size.
+ * Here we check for browsers with media query support and tablet/phone-sized browsers,
+ * AND we also check for browsers that do not support media queries (IE 7, 8, for instance.) 
+**/
 Generic.fullHeightCol = function($) {
 	if ( (Modernizr.mq("only all and (min-width: 767px)")) || (Modernizr.mq('only all') === false) ) {
 		$('div.span8').css('height', ($('body').height()));
