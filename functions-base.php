@@ -1875,7 +1875,6 @@ function _show_meta_boxes($post, $meta_box){
 
 /**
  * Output Social icons and company address.
- * TODO: Have icons appear based on theme settings for facebook/twitter/etc and address (need to add an Address field in site settings.)
  * 
  * @author Jo Greybill
 **/
