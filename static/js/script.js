@@ -84,7 +84,6 @@ to see the desired effect (if you're testing on a
 desktop.)
  */
 Generic.removeEmptyTableRows = function($) {
-	
 	if (Modernizr.mq("only all and (max-width: 767px)")) {
 		/* Target empty ul's, primarily to remove empty lists written in Personnel lists */
 		$('td ul').filter(function() { return $.trim($(this).html()) === '' }).parent('td').remove();
@@ -99,6 +98,16 @@ Generic.fullHeightCol = function($) {
 	}
 }
 
+/* Fix images with aligncenter class so that they actually center when wrapped in a <p> tag.
+ * Will only fix images who are the only child element of a given <p> tag to prevent 
+ * undesired results in <p> tags with both images and text content.
+ *
+*/
+Generic.aligncenterFix = function($) {
+	if ( $('img.aligncenter').parent('p').children().length < 2 ) {
+		$('img.aligncenter').parent('p').css('text-align','center');
+	}
+}
 
 if (typeof jQuery != 'undefined'){
 	jQuery(document).ready(function($) {
@@ -113,5 +122,6 @@ if (typeof jQuery != 'undefined'){
 		//Generic.resizeSearch($);
 		Generic.removeEmptyTableRows($);			
 		Generic.fullHeightCol($);	
+		Generic.aligncenterFix($);
 	});
 }else{console.log('jQuery dependancy failed to load');}
