@@ -329,6 +329,7 @@ Config::$styles = array(
 Config::$scripts = array(
 	array('admin' => True, 'src' => THEME_JS_URL.'/admin.js',),
 	array('name' => 'jquery', 'src' => 'http://code.jquery.com/jquery-1.7.1.min.js',),
+	array('name' => 'respondjs', 'src' => THEME_STATIC_URL.'/respond.min.js',),
 	array('name' => 'bootstrap',  'src' => 	THEME_STATIC_URL.'/bootstrap/build/js/bootstrap.min.js',),
 	array('name' => 'modernizr-media-queries',  'src' => THEME_JS_URL.'/modernizr.2.5.3.mediaqueries.js',),
 	array('name' => 'base-script',  'src' => THEME_JS_URL.'/webcom-base.js',),
