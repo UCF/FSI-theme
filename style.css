@@ -15,6 +15,7 @@ body {
 	padding: 0;
 	background: #000 url('static/img/fsi-bg-top-large-dark.jpg') top center repeat-x;
 	height: 100%;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 div#backgroundwrap {
