@@ -1884,7 +1884,7 @@ function get_sidebar_extras() {
 	?>
 	
 	<div class="sidebar_social">
-        <a class="sidebar_socialbtn" id="sidebar_facebook" href="http://www.facebook.com/floridaspaceinstitute/">Facebook</a>
+        <a class="sidebar_socialbtn" id="sidebar_facebook" href="http://www.facebook.com/pages/Florida-Space-Institute-FSI/353593684667181">Facebook</a>
         <a class="sidebar_socialbtn" id="sidebar_twitter" href="http://www.twitter.com/floridaspaceinstitute/">Twitter</a>
     </div>
     
