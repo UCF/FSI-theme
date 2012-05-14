@@ -189,7 +189,7 @@ address {
 	@media (min-width: 767px) { 
 		address {
 			padding: 15px;
-			background: #222;
+			background:/*\**/#222\9;
 			background: rgba(0,0,0,0.6);
 		}
 	}
