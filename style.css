@@ -185,12 +185,12 @@ address {
 	font-size: 14px;
 	font-weight: 400;	
 	letter-spacing: 1px;
+	display:/*\**/block\9;
+	background-color:/*\**/#222\9;
 }
 	@media (min-width: 767px) { 
 		address {
 			padding: 15px;
-			display:/*\**/block\9;
-			background-color:/*\**/#222\9;
 			background: rgba(0,0,0,0.6);
 		}
 	}
