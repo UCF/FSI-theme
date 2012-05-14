@@ -186,6 +186,13 @@ address {
 	font-weight: 400;	
 	letter-spacing: 1px;
 }
+	@media (min-width: 767px) { 
+		address {
+			padding: 15px;
+			background: #222;
+			background: rgba(0,0,0,0.6);
+		}
+	}
 
 /* Mobile navigation settings */
 
