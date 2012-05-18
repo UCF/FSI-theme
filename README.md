@@ -37,6 +37,10 @@ Assign each navigation menu to the four provided menu slots:
   * Corporate Partners should be assigned to Secondary Nav 2,
   * Educational Partners should be assigned to Secondary Nav 3.
 
+In Theme Options > Site, add the Organization Name (Florida Space Institute), Street Address (12443 Research Parkway), City/State/ZIP (Orlando, Florida 32333-3333), and Phone number (407-823-0000)
+
+In Theme Options > Social, add the Facebook URL (http://www.facebook.com/pages/Florida-Space-Institute-FSI/353593684667181) and Twitter URL (tbd)
+
 
 ##Notes
 This site uses the Person custom post type and Organizational Groups taxonomy.
