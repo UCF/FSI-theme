@@ -15,7 +15,7 @@ body {
 	padding: 0;
 	background: #000 url('static/img/fsi-bg-top-large-dark.jpg') top center repeat-x;
 	height: 100%;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 div#backgroundwrap {
@@ -93,6 +93,7 @@ h2.widgettitle {
 	line-height: 25px;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;	
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 	
 ul.menu {
@@ -118,6 +119,7 @@ ul.menu {
 			font-size: 28px;
 			font-weight: 100;
 			letter-spacing: 1.5px;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
 		
 		ul#menu-main-menu ul {
