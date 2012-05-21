@@ -244,7 +244,7 @@ div#mobile_footer {
 /* Main Content */
 
 div.span8 {
-	background-color: rgba(255,255,255,0.65);
+	background-color: rgba(255,255,255,0.8);
 	zoom: 1;
 	background: url('static/img/fsi-ie-transbg.png') repeat\9;
 	color: #000;
@@ -377,13 +377,9 @@ table.table-striped tr td.phones ul li {
 	td.job_title {
 		border-top: 0;
 	}
-	td.phones {
-		padding-bottom: 1px;
-	}
 	td.phones ul li {
-		margin: 0 0 0 -25px;
+		margin-left: -10px !important;
 		line-height: 16px;
-		list-style-type: none;
 	}
 }
 
