@@ -464,7 +464,7 @@ class Person extends CustomPostType
 		}
 	
 	public function get_objects($options=array()){
-		$options['order']    = 'ASC';
+		$options['order']    = 'DESC';
 		$options['orderby']  = 'person_orderby_name';
 		$options['meta_key'] = 'person_orderby_name';
 		return parent::get_objects($options);
