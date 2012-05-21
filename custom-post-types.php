@@ -500,7 +500,6 @@ class Person extends CustomPostType
 						$sections[$term->name] = array();
 					}
 					$sections[$term->name][] = $person;
-					arsort($sections);
 				}
 			}
 		}
