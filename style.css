@@ -196,6 +196,7 @@ address {
 		address {
 			padding: 15px;
 			background: rgba(0,0,0,0.6);
+			margin-left: -15px;
 		}
 	}
 
