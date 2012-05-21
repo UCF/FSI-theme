@@ -504,15 +504,16 @@ class Person extends CustomPostType
 			}
 		}
 
+		# We need a custom sort order for Personnel: Faculty, then Staff, then Affiliated Faculty
+		$customSort = array();
+		if ( $name == "FSI Faculty" ) { $customSort[0] = "FSI Faculty"; }
+		if ( $name == "FSI Staff" ) { $customSort[1] = "FSI Staff"; }
+		if ( $name == "FSI Affiliated Faculty" ) { $customSort[2] = "FSI Affiliated Faculty"; }
+		usort($customSort, $sections);
+
 		# Display each section
 		ob_start();
 		foreach($sections as $name => $people) {
-			# We need a custom sort order for Personnel: Faculty, then Staff, then Affiliated Faculty
-			$customSort = array();
-			if ( $name == "FSI Faculty" ) { $customSort[0] = "FSI Faculty"; }
-			if ( $name == "FSI Staff" ) { $customSort[1] = "FSI Staff"; }
-			if ( $name == "FSI Affiliated Faculty" ) { $customSort[2] = "FSI Affiliated Faculty"; }
-			usort($customSort, $sections);
 		?>
 		<div class="people-org-group">
 			<? if($name != ''): ?><h3><?=$name?></h3><? endif ?>
