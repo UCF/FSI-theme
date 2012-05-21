@@ -377,13 +377,9 @@ table.table-striped tr td.phones ul li {
 	td.job_title {
 		border-top: 0;
 	}
-	td.phones {
-		padding-bottom: 1px;
-	}
 	td.phones ul li {
-		margin: 0 0 0 -25px;
+		margin-left: -10px !important;
 		line-height: 16px;
-		list-style-type: none;
 	}
 }
 
