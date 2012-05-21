@@ -500,13 +500,13 @@ class Person extends CustomPostType
 						$sections[$term->name] = array();
 					}
 					$sections[$term->name][] = $person;
+					arsort($sections);
 				}
 			}
 		}
 
 		# Display each section
 		ob_start();
-		arsort($sections);
 		foreach($sections as $name => $people) {
 		?>
 		<div class="people-org-group">
