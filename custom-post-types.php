@@ -464,7 +464,7 @@ class Person extends CustomPostType
 		}
 	
 	public function get_objects($options=array()){
-		$options['order']    = 'DESC';
+		$options['order']    = 'ASC';
 		$options['orderby']  = 'person_orderby_name';
 		$options['meta_key'] = 'person_orderby_name';
 		return parent::get_objects($options);
@@ -506,6 +506,7 @@ class Person extends CustomPostType
 
 		# Display each section
 		ob_start();
+		arsort($sections);
 		foreach($sections as $name => $people) {
 		?>
 		<div class="people-org-group">
