@@ -243,7 +243,7 @@ div#mobile_footer {
 
 /* Main Content */
 
-div.span8 {
+div#rightcol-content {
 	background-color: rgba(255,255,255,0.8);
 	zoom: 1;
 	background: url('static/img/fsi-ie-transbg.png') repeat\9;
@@ -251,15 +251,15 @@ div.span8 {
 	height: 100%;
 }
 	@media (max-width: 767px) { /* Fix floating overlap issue at smaller browser size */
-		div.span8 {
+		div#rightcol-content {
 			clear:both;
 		}
 	}
 
-	div.span8 h2, div.span8 h3, div.span8 h4, div.span8 h5, div.span8 h6, div.span8 a {
+	div#rightcol-content h2, div#rightcol-content h3, div#rightcol-content h4, div#rightcol-content h5, div#rightcol-content h6, div#rightcol-content a {
 		color: #000;
 	}
-		div.span8 a {
+		div#rightcol-content a {
 			font-weight: bold;
 		}
 	div article h2 {
