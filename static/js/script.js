@@ -98,7 +98,7 @@ Generic.removeEmptyTableRows = function($) {
 **/
 Generic.fullHeightCol = function($) {
 	if ( (Modernizr.mq("only all and (min-width: 767px)")) || (Modernizr.mq('only all') === false) ) {
-		$('div.span8').css('min-height', (130 + $('body').height()));
+		$('div.span8').css('min-height', ($('body').height()));
 	}
 }
 
