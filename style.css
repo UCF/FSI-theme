@@ -114,6 +114,7 @@ ul.menu {
 	}
 		ul#menu-main-menu li {
 			line-height: 34px;	
+			margin-left: 20px;
 		}
 		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
 			font-size: 28px;
@@ -128,7 +129,6 @@ ul.menu {
 			border-left: 1px solid #fff;	
 		}
 			ul#menu-main-menu ul li a, ul#menu-main-menu ul li a:hover {
-				margin-left: 20px;
 				font-size: 22px;
 				line-height: 28px;	
 			}
