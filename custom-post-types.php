@@ -503,6 +503,7 @@ class Person extends CustomPostType
 				}
 			}
 		}
+		asort($sections); /* Displaying Faculty/Staff in reverse alphabetical order for this theme */
 
 		# Display each section
 		ob_start();
