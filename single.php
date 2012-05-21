@@ -4,7 +4,7 @@
 <?php get_sidebar();?>
 			
 
-	<div class="span8">
+	<div class="span8" id="rightcol-content">
 			
 			<div class="contentwrap <?php $posttype = get_post_type(); print $posttype; ?>-content" id="<?=$post->post_name?>">
 				<article>

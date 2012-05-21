@@ -4,7 +4,7 @@
 			
 <?=get_sidebar();?>
 	
-	<div class="span8">
+	<div class="span8" id="rightcol-content">
 			
 			<div class="contentwrap page-content" id="home">
 				<article>
