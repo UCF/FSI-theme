@@ -73,4 +73,58 @@ function sc_search_form() {
 	return ob_get_clean();
 }
 add_shortcode('search_form', 'sc_search_form');
+
+
+
+
+function person_by_org_group($attr, $content = null) {
+	$group = $attr['group'];
+	if ($group == '') { return ''; }
+	$people = get_posts(array('post_type' => 'person', 'limit' => -1, 'org_group' => $group));
+	
+	ob_start();?>
+	<div class="people-org-group">
+			<h3><?=$group?></h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col" class="name">Name</th>
+						<th scope="col" class="job_title">Title</th>
+						<th scope="col" class="phones">Phone(s)</th>
+						<th scope="col" class="email">E-Mail</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php $count = 0;
+						foreach($people as $person) {
+							$count++;
+							$email     = get_post_meta($person->ID, 'person_email', True);
+						?>
+							<tr>
+								<td class="name">
+									<a href="<?=get_permalink($person->ID)?>"><?=Person::get_name($person)?></a>
+								</td>
+								<td class="job_title">
+									<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
+								</td> 
+								<td class="phones">
+										<ul>
+											<? foreach(Person::get_phones($person) as $phone) {
+												  ?>
+												<li><?=$phone?></li>
+											<?php } ?>
+										</ul>
+								</td>
+								<td class="email">
+									<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '') ?>
+								</td>
+							</tr>
+					<? } ?>
+				</tbody>
+			</table>
+		</div>
+	<?php 
+	return ob_get_clean();
+}
+add_shortcode('people-group', 'person_by_org_group');
 ?>
