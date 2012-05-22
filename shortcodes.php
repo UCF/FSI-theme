@@ -79,10 +79,12 @@ add_shortcode('search_form', 'sc_search_form');
 
 function person_by_org_group($attr, $content = null) {
 	$group = $attr['group'];
+	$taxonomy = get_taxonomy('org_groups');
 	if ($group == '') { return ''; }
-	$people = get_posts(array('post_type' => 'person', 'limit' => -1, 'org_group' => $group));
+	$people = get_posts(array('post_type' => 'person', 'taxonomy' => 'org_groups', 'term' => $group, 'numberposts' => -1));
 	
 	ob_start();?>
+	
 	<div class="people-org-group">
 			<h3><?=$group?></h3>
 			<table class="table table-striped">
