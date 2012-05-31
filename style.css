@@ -322,6 +322,10 @@ div#post_navigation {
 
 /* Personnel Lists */
 
+table {
+	margin-top: 10px;	
+}
+
 .table-striped tbody tr td, .table-striped tbody tr th {
 	background-color: #fff;
 }
@@ -330,23 +334,24 @@ div#post_navigation {
 }
 .table-striped thead tr th {
 	font-size: 14px;
+	background: #fff;
 }
 
 table.table-striped td.name, table.table-striped td.email {
 	width: 25%;
 }
 table.table-striped td.job_title {
-	width: 35%;
+	width: 25%;
 }
 table.table-striped td.phones {
-	width: 15%;
+	width: 25%;
 }
 
 table.table-striped tr td.phones ul {
 	margin-bottom: 0;
 }
 table.table-striped tr td.phones ul li {
-	list-style-type: disc;
+	list-style-type: none;
 	margin: 0 0 0 -25px;
 	vertical-align: top;
 }
