@@ -352,9 +352,12 @@ table.table-striped tr td.phones ul {
 }
 table.table-striped tr td.phones ul li {
 	list-style-type: none;
-	margin: 0 0 0 -25px;
+	margin: 0 0 5px -25px;
 	vertical-align: top;
 }
+	table.table-striped tr td.phones ul li:last-child {
+		margin-bottom: 0;	
+	}
 
 /* Personnel Lists for tablets/phones - responsive table guide via css-tricks.com/responsive-data-tables/ */
 
@@ -383,7 +386,6 @@ table.table-striped tr td.phones ul li {
 		border-top: 0;
 	}
 	td.phones ul li {
-		margin-left: -10px !important;
 		line-height: 16px;
 	}
 }
