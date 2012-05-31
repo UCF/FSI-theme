@@ -76,18 +76,21 @@ Generic.homeDimensions = function($){
 	
 };
 
-/* Remove empty table cells for tablets/phones.
+/* Remove empty table cells and remove the class 
+'table-bordered' for tablets/phones.
 Note that Modernizr will not detect changes in browser 
 window size after its initial state is checked, so
 you'll have to refresh a desktop browser after resizing
 to see the desired effect (if you're testing on a 
 desktop.)
  */
-Generic.removeEmptyTableRows = function($) {
+Generic.mobileTables = function($) {
 	if (Modernizr.mq("only all and (max-width: 767px)")) {
 		/* Target empty ul's, primarily to remove empty lists written in Personnel lists */
 		$('td ul').filter(function() { return $.trim($(this).html()) === '' }).parent('td').remove();
 		$('tr td').filter(function() { return $.trim($(this).html()) === '' }).remove();
+		/* Remove the class table-bordered for mobile, since it has undesirable results otherwise */
+		$('.table-bordered').removeClass('table-bordered');
 	}
 }
 
@@ -124,7 +127,7 @@ if (typeof jQuery != 'undefined'){
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
-		Generic.removeEmptyTableRows($);	
+		Generic.mobileTables($);	
 		Generic.aligncenterFix($);		
 		Generic.fullHeightCol($);	
 	});
