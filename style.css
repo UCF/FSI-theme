@@ -2,7 +2,7 @@
 Theme Name: FSI Theme
 Author: UCF Web Communications
 Github Theme URI: https://github.com/UCF/FSI-theme
-Version: v1.0.3
+Version: v1.0.4
 */
 
 /* Main Styles */
@@ -116,8 +116,8 @@ ul.menu {
 			line-height: 34px;
 		}
 		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
-			font-size: 28px;
-			font-weight: 100;
+			font-size: 16x;
+			font-weight: 400;
 			letter-spacing: 1.5px;
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
@@ -247,7 +247,7 @@ div#rightcol-content {
 	background-color: rgba(255,255,255,0.8);
 	zoom: 1;
 	background: url('static/img/fsi-ie-transbg.png') repeat\9;
-	color: #000;
+	color: #031C37;
 	height: 100%;
 }
 	@media (max-width: 767px) { /* Fix floating overlap issue at smaller browser size */

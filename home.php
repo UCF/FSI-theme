@@ -10,7 +10,7 @@
 				<article>
 					<h2>Welcome to the Florida Space Institute</h2>
 					<?php $home_content = get_page_by_title('Home'); echo (apply_filters('the_content',$home_content->post_content)); ?>
-					
+					<h3>News</h3>
 					<?php
 					//Get 2 featured posts for the home page.  If no posts tagged as 'featured' exist, pull the 2 newest posts
 					$featured_query = new WP_Query( array('posts_per_page' => 2, 'tag' => 'featured') );
