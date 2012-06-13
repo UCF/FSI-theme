@@ -108,10 +108,10 @@ ul.menu {
 		font-weight: 400;
 		color: #fff;	
 	}
-
+	
 	ul#menu-main-menu {
-		margin: 30px 0 40px 0;
-	}
+		margin: 30px 0 30px 0;
+	}/*
 		ul#menu-main-menu li {
 			line-height: 34px;
 		}
@@ -120,7 +120,7 @@ ul.menu {
 			font-weight: 400;
 			letter-spacing: 1.5px;
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		}
+		}*/
 		
 		ul#menu-main-menu ul {
 			list-style-type: none;
@@ -129,14 +129,17 @@ ul.menu {
 		}
 			ul#menu-main-menu ul li {
 				margin-left: 20px;
-			}
+			}/*
 			ul#menu-main-menu ul li a, ul#menu-main-menu ul li a:hover {
 				font-size: 22px;
 				line-height: 28px;	
-			}
+			}*/
 
 	@media (max-width: 767px) { /* navbar formatting - smaller text for mobile devices */
-		ul#menu-main-menu li {
+		ul#menu-main-menu {
+			margin: 0 0 9px;	
+		}
+		/*ul#menu-main-menu li {
 			line-height: 25px;	
 		}
 		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
@@ -157,7 +160,7 @@ ul.menu {
 		ul.menu li a, .navbar .nav li a {
 			font-size: 14px;
 			color: #fff;
-		}
+		}*/
 		
 	}
 
