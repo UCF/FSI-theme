@@ -2,7 +2,7 @@
 Theme Name: FSI Theme
 Author: UCF Web Communications
 Github Theme URI: https://github.com/UCF/FSI-theme
-Version: v0.1.0
+Version: v1.0.5
 */
 
 /* Main Styles */
@@ -108,19 +108,19 @@ ul.menu {
 		font-weight: 400;
 		color: #fff;	
 	}
-
+	
 	ul#menu-main-menu {
-		margin: 30px 0 40px 0;
-	}
+		margin: 30px 0 30px 0;
+	}/*
 		ul#menu-main-menu li {
 			line-height: 34px;
 		}
 		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
-			font-size: 28px;
-			font-weight: 100;
+			font-size: 16px;
+			font-weight: 400;
 			letter-spacing: 1.5px;
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		}
+		}*/
 		
 		ul#menu-main-menu ul {
 			list-style-type: none;
@@ -129,14 +129,17 @@ ul.menu {
 		}
 			ul#menu-main-menu ul li {
 				margin-left: 20px;
-			}
+			}/*
 			ul#menu-main-menu ul li a, ul#menu-main-menu ul li a:hover {
 				font-size: 22px;
 				line-height: 28px;	
-			}
+			}*/
 
 	@media (max-width: 767px) { /* navbar formatting - smaller text for mobile devices */
-		ul#menu-main-menu li {
+		ul#menu-main-menu {
+			margin: 0 0 9px;	
+		}
+		/*ul#menu-main-menu li {
 			line-height: 25px;	
 		}
 		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
@@ -157,7 +160,7 @@ ul.menu {
 		ul.menu li a, .navbar .nav li a {
 			font-size: 14px;
 			color: #fff;
-		}
+		}*/
 		
 	}
 
@@ -247,7 +250,7 @@ div#rightcol-content {
 	background-color: rgba(255,255,255,0.8);
 	zoom: 1;
 	background: url('static/img/fsi-ie-transbg.png') repeat\9;
-	color: #000;
+	color: #031C37;
 	height: 100%;
 }
 	@media (max-width: 767px) { /* Fix floating overlap issue at smaller browser size */
@@ -322,6 +325,10 @@ div#post_navigation {
 
 /* Personnel Lists */
 
+table {
+	margin-top: 10px;	
+}
+
 .table-striped tbody tr td, .table-striped tbody tr th {
 	background-color: #fff;
 }
@@ -330,26 +337,30 @@ div#post_navigation {
 }
 .table-striped thead tr th {
 	font-size: 14px;
+	background: #fff;
 }
 
 table.table-striped td.name, table.table-striped td.email {
 	width: 25%;
 }
 table.table-striped td.job_title {
-	width: 35%;
+	width: 25%;
 }
 table.table-striped td.phones {
-	width: 15%;
+	width: 25%;
 }
 
 table.table-striped tr td.phones ul {
 	margin-bottom: 0;
 }
 table.table-striped tr td.phones ul li {
-	list-style-type: disc;
-	margin: 0 0 0 -25px;
+	list-style-type: none;
+	margin: 0 0 5px -25px;
 	vertical-align: top;
 }
+	table.table-striped tr td.phones ul li:last-child {
+		margin-bottom: 0;	
+	}
 
 /* Personnel Lists for tablets/phones - responsive table guide via css-tricks.com/responsive-data-tables/ */
 
@@ -378,7 +389,6 @@ table.table-striped tr td.phones ul li {
 		border-top: 0;
 	}
 	td.phones ul li {
-		margin-left: -10px !important;
 		line-height: 16px;
 	}
 }

@@ -87,7 +87,7 @@ function person_by_org_group($attr, $content = null) {
 	
 	<div class="people-org-group">
 			<h3><?=$group?></h3>
-			<table class="table table-striped">
+			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th scope="col" class="name">Name</th>

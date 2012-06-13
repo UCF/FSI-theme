@@ -1917,7 +1917,7 @@ function get_person_meta($post_id)
 	
 	ob_start()?>
 	
-		<h2><a href="../../personnel/">Personnel</a> &raquo; <?php the_title();?></h2>
+		<h2><a href="../../personnel/">Personnel</a></h2>
 		
 		<div id="personnel-info" class="row">
 		
@@ -1930,6 +1930,7 @@ function get_person_meta($post_id)
 			</div>
 			
 			<div id="details" class="span-6 last">
+				<h2><?php the_title();?></h2>
 				<h3><?=$title?></h3>
 				<ul>
 					<? foreach($phones as $phone) { ?>

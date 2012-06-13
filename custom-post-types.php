@@ -510,7 +510,7 @@ class Person extends CustomPostType
 		?>
 		<div class="people-org-group">
 			<? if($name != ''): ?><h3><?=$name?></h3><? endif ?>
-			<table class="table table-striped">
+			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th scope="col" class="name">Name</th>

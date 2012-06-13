@@ -5,7 +5,7 @@
 <?=get_sidebar();?>
 
 	
-	<div class="span8">
+	<div class="span8" id="rightcol-content">
 		<div class="contentwrap page-content" id="<?=$post->post_name?>">
 			<article>
 				<h2>Page Not Found</h2>
