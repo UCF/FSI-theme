@@ -78,10 +78,13 @@ add_shortcode('search_form', 'sc_search_form');
 
 
 function person_by_org_group($attr, $content = null) {
+	$alanstern   = get_page_by_title('Alan Stern', 'OBJECT', 'person');
+	$joshuacolwell = get_page_by_title('Joshua Colwell', 'OBJECT', 'person');
+	
 	$group = $attr['group'];
 	$taxonomy = get_taxonomy('org_groups');
 	if ($group == '') { return ''; }
-	$people = get_posts(array('post_type' => 'person', 'taxonomy' => 'org_groups', 'term' => $group, 'numberposts' => -1));
+	$people = get_posts(array('post_type' => 'person', 'taxonomy' => 'org_groups', 'term' => $group, 'numberposts' => -1, 'orderby' => 'person_orderby_name', 'meta_key' => 'person_orderby_name', 'order' => 'ASC', 'exclude' => array($alanstern->ID, $joshuacolwell->ID))); //Exclude Alan Stern and Josh Colwell
 	
 	ob_start();?>
 	
@@ -95,9 +98,51 @@ function person_by_org_group($attr, $content = null) {
 						<th scope="col" class="phones">Phone(s)</th>
 						<th scope="col" class="email">E-Mail</th>
 					</tr>
-				</thead>
+				</thead>				
 				<tbody>
-					<?php $count = 0;
+					<?php if ($group == 'FSI Faculty') { //Alan Stern and Joshual Colwell must go first ?>
+							<tr>
+								<td class="name">
+									<a href="<?=get_permalink($alanstern->ID)?>"><?=Person::get_name($alanstern)?></a>
+								</td>
+								<td class="job_title">
+									<?=get_post_meta($alanstern->ID, 'person_jobtitle', True)?>
+								</td> 
+								<td class="phones">
+										<ul>
+											<? foreach(Person::get_phones($alanstern) as $phone) {
+												  ?>
+												<li><?=$phone?></li>
+											<?php } ?>
+										</ul>
+								</td>
+								<td class="email">
+									<?=((get_post_meta($alanstern->ID, 'person_email', TRUE) != '') ? '<a href="mailto:'.get_post_meta($alanstern->ID, 'person_email', TRUE).'">'.get_post_meta($alanstern->ID, 'person_email', TRUE).'</a>' : '') ?>
+								</td>
+							</tr>
+							<tr>
+								<td class="name">
+									<a href="<?=get_permalink($joshuacolwell->ID)?>"><?=Person::get_name($joshuacolwell)?></a>
+								</td>
+								<td class="job_title">
+									<?=get_post_meta($joshuacolwell->ID, 'person_jobtitle', True)?>
+								</td> 
+								<td class="phones">
+										<ul>
+											<? foreach(Person::get_phones($joshuacolwell) as $phone) {
+												  ?>
+												<li><?=$phone?></li>
+											<?php } ?>
+										</ul>
+								</td>
+								<td class="email">
+									<?=((get_post_meta($joshuacolwell->ID, 'person_email', TRUE) != '') ? '<a href="mailto:'.get_post_meta($joshuacolwell->ID, 'person_email', TRUE).'">'.get_post_meta($joshuacolwell->ID, 'person_email', TRUE).'</a>' : '') ?>
+								</td>
+							</tr>
+				
+					<?php
+					}
+					$count = 0;
 						foreach($people as $person) {
 							$count++;
 							$email     = get_post_meta($person->ID, 'person_email', True);
