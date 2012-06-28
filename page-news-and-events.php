@@ -22,7 +22,7 @@
 							  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb'); ?></a>
 							<?php } ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<?php the_excerpt(); ?>
+							<?php echo apply_filters('the_content', get_the_excerpt()); ?>
 						</div>
 					<?php	
 					endwhile;
