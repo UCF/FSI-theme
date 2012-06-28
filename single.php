@@ -15,8 +15,9 @@
 						<?=get_person_meta($post->ID); ?>
 					<?php } else { ?>
 						
-					<!-- ELSE display a typical post output: -->
+					<!-- ELSE display a typical post (news article) output: -->
 					
+					<a class="news-back" href="../news-and-events/">&laquo; Back to News</a>
 					<h2><?php the_title();?></h2>
 					<p class="header-img-wrap">
 					<?php
