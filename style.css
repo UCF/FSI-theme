@@ -265,11 +265,33 @@ div#rightcol-content {
 		div#rightcol-content a {
 			font-weight: bold;
 		}
+	
+	@media (min-width: 768px) {	
+		div.post-content {
+			padding-top: 132px !important;	
+		}
+	}
+	article a.news-back {
+		position: relative;
+		top: -20px;
+		height: 15px;
+	}
+		@media (max-width: 767px) {
+			article a.news-back {
+				position: static;
+				top: 0;
+			}
+		}
 	div article h2 {
 		font-weight: 200;
 		font-size: 32px;
 		line-height: 38px;
 	}
+		@media (max-width: 767px) {
+			div article h2 {
+				margin-top: 20px;
+			}
+		}
 	div#home article h2 { 
 		font-weight: bold;
 		font-size: 24px;
