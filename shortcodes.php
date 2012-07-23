@@ -117,7 +117,6 @@ function person_by_org_group($attr, $content = null) {
 						foreach($people as $person) {
 							$count++;
 							$email      = get_post_meta($person->ID, 'person_email', True);
-							var_dump($person->menu_order);
 						?>
 							<tr>
 								<td class="name">
