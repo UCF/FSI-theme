@@ -77,15 +77,14 @@ Generic.homeDimensions = function($){
 };
 
 /* Remove empty table cells and remove the class 
-'table-bordered' for tablets/phones.
+'table-bordered' for tablets/phones.  (For Personnel output)
  */
 Generic.mobileTables = function($) {
 	if ($(window).width() <= 767) {
-		/* Target empty ul's, primarily to remove empty lists written in Personnel lists */
-		$('td ul').filter(function() { return $.trim($(this).html()) === '' }).parent('td').remove();
-		$('tr td').filter(function() { return $.trim($(this).html()) === '' }).remove();
-		/* Remove the class table-bordered for mobile, since it has undesirable results otherwise */
-		$('.table-bordered').removeClass('table-bordered');
+		$('.table.table-bordered').removeClass('table-bordered');
+	}
+	else {
+		$('.people-org-group .table').addClass('table-bordered');
 	}
 }
 
@@ -120,7 +119,7 @@ if (typeof jQuery != 'undefined'){
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
-		/*Generic.mobileTables($);	
+		Generic.mobileTables($);	
 		Generic.aligncenterFix($);		
 		Generic.fullHeightCol($);
 		
@@ -128,7 +127,7 @@ if (typeof jQuery != 'undefined'){
 			Generic.mobileTables($);	
 			Generic.aligncenterFix($);		
 			Generic.fullHeightCol($);
-		});*/
+		});
 		
 	});
 }else{console.log('jQuery dependancy failed to load');}
