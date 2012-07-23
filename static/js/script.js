@@ -78,14 +78,9 @@ Generic.homeDimensions = function($){
 
 /* Remove empty table cells and remove the class 
 'table-bordered' for tablets/phones.
-Note that Modernizr will not detect changes in browser 
-window size after its initial state is checked, so
-you'll have to refresh a desktop browser after resizing
-to see the desired effect (if you're testing on a 
-desktop.)
  */
 Generic.mobileTables = function($) {
-	if (Modernizr.mq("only all and (max-width: 767px)")) {
+	if ($(window).width() <= 767) {
 		/* Target empty ul's, primarily to remove empty lists written in Personnel lists */
 		$('td ul').filter(function() { return $.trim($(this).html()) === '' }).parent('td').remove();
 		$('tr td').filter(function() { return $.trim($(this).html()) === '' }).remove();
@@ -96,11 +91,9 @@ Generic.mobileTables = function($) {
 
 /**
  * Get the body column's height to equal that of the body tag at desktop size.
- * Here we check for browsers with media query support and tablet/phone-sized browsers,
- * AND we also check for browsers that do not support media queries (IE 7, 8, for instance.) 
 **/
 Generic.fullHeightCol = function($) {
-	if ( (Modernizr.mq("only all and (min-width: 767px)")) || (Modernizr.mq('only all') === false) ) {
+	if ( $(window).width() > 767) {
 		$('div#rightcol-content').css('min-height', ($('body').height()));
 	}
 }
@@ -127,8 +120,15 @@ if (typeof jQuery != 'undefined'){
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
-		Generic.mobileTables($);	
+		/*Generic.mobileTables($);	
 		Generic.aligncenterFix($);		
-		Generic.fullHeightCol($);	
+		Generic.fullHeightCol($);
+		
+		$(window).resize(function() {
+			Generic.mobileTables($);	
+			Generic.aligncenterFix($);		
+			Generic.fullHeightCol($);
+		});*/
+		
 	});
 }else{console.log('jQuery dependancy failed to load');}
