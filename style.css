@@ -382,7 +382,7 @@ table.table-striped tr td.phones ul {
 }
 table.table-striped tr td.phones ul li {
 	list-style-type: none;
-	margin: 0 0 5px -25px;
+	margin: 0 0 5px 0;
 	vertical-align: top;
 }
 	table.table-striped tr td.phones ul li:last-child {

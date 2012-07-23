@@ -117,25 +117,19 @@ function person_by_org_group($attr, $content = null) {
 						foreach($people as $person) {
 							$count++;
 							$email      = get_post_meta($person->ID, 'person_email', True);
+							$link = ($person->post_content == '') ? False : True;
 						?>
 							<tr>
 								<td class="name">
-									<a href="<?=get_permalink($person->ID)?>"><?=Person::get_name($person)?></a>
+									<a href="<?=get_permalink($person->ID)?>">
+										<?=Person::get_name($person)?>
+									</a>
 								</td>
 								<td class="job_title">
 									<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
 								</td> 
-								<td class="phones">
-										<ul>
-											<? foreach(Person::get_phones($person) as $phone) {
-												  ?>
-												<li><?=$phone?></li>
-											<?php } ?>
-										</ul>
-								</td>
-								<td class="email">
-									<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '') ?>
-								</td>
+								<td class="phones"><?php if(Person::get_phones($person)){?><ul class="unstyled"><?php foreach(Person::get_phones($person) as $phone) { ?><li><?=$phone?></li><?php }?></ul><?php } ?></td>
+								<td class="email"><?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?></td>
 							</tr>
 					<? } ?>
 				</tbody>
