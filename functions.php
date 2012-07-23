@@ -356,3 +356,20 @@ if ($theme_options['bw_verify']){
 		'content' => htmlentities($theme_options['bw_verify']),
 	);
 }
+
+
+/**
+ * Sets default menu_order value to 999 for new posts - not 
+ * the most graceful method, but it needs to not be 0 so that people
+ * with a specific order will appear first in org group listings
+ **/
+add_filter( 'wp_insert_post_data', 'person_menu_order_default', 10, 2 );
+function person_menu_order_default( $data, $postarr ) {
+	global $post;
+	$post_type= 'person';
+	if ( $data[ 'post_type' ] == $post_type && get_post( $postarr[ 'ID' ] )->post_status == 'draft' ) {
+		global $wpdb;
+		$data[ 'menu_order' ]=$wpdb->get_var( "SELECT MIN(menu_order)+999 AS menu_order FROM {$wpdb->posts} WHERE post_type='{$post_type}'" );
+	}
+	return $data;
+}
