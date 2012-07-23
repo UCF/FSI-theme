@@ -503,7 +503,7 @@ class Person extends CustomPostType
 						<tr>
 							<td class="name">
 								<a href="<?=get_permalink($person->ID)?>">
-									<?=Person::get_name($person)?>
+									<?=$this->get_name($person)?>
 								</a>
 							</td>
 							<td class="job_title">
