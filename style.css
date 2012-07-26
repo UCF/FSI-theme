@@ -263,12 +263,12 @@ div#rightcol-content {
 		color: #000;
 	}
 		div#rightcol-content a, div#rightcol-content a:visited {
-			color: #0088cc;
+			color: #000080;
 			font-weight: bold;
 			text-decoration: underline;
 		}
 		div#rightcol-content a:hover {
-			color: #0CF;
+			color: #3d59ab;
 		}
 	
 	@media (min-width: 768px) {	
