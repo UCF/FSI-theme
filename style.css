@@ -1,14 +1,14 @@
-/*   
+/*
 Theme Name: FSI Theme
 Author: UCF Web Communications
 Github Theme URI: https://github.com/UCF/FSI-theme
-Version: v1.0.9
+Version: v1.0.10
 */
 
 /* Main Styles */
 
 html {
-	/*height: 100%;*/	
+	/*height: 100%;*/
 }
 
 body {
@@ -21,21 +21,21 @@ body {
 div#backgroundwrap {
 	width: 100%;
 	height: 100%;
-	background: url('static/img/fsi-bg-earth-large-fade.jpg') bottom center no-repeat;	
+	background: url('static/img/fsi-bg-earth-large-fade.jpg') bottom center no-repeat;
 	overflow: auto;
 }
 
 div.container-fluid {
 	padding-right: 0;
-	height: 100%;	
-}	
+	height: 100%;
+}
 	@media (max-width: 767px) {
 		div.container-fluid {
 			padding-left: 0px;
 		}
 	}
 
-div.row-fluid {	
+div.row-fluid {
 
 }
 
@@ -50,7 +50,7 @@ div.row-fluid {
 	width: 241px;
 	height: 140px;
 	text-indent: -9999px;
-	background: url('static/img/fsi-logo-white-fade.png') center center no-repeat;	
+	background: url('static/img/fsi-logo-white-fade.png') center center no-repeat;
 	margin-top: 20px;
 }
 
@@ -92,57 +92,57 @@ h2.widgettitle {
 	font-size: 16px;
 	line-height: 25px;
 	text-transform: uppercase;
-	letter-spacing: 1.5px;	
+	letter-spacing: 1.5px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-	
+
 ul.menu {
 	list-style-type: none;
-	margin: 0 0 30px 0;	
+	margin: 0 0 30px 0;
 }
 	ul.menu li {
-		line-height: 25px;	
+		line-height: 25px;
 	}
 	ul.menu li a {
 		font-size: 16px;
 		font-weight: 400;
-		color: #fff;	
+		color: #fff;
 	}
-	
+
 	ul#menu-main-menu {
 		margin: 30px 0 30px 0;
 	}/*
 		ul#menu-main-menu li {
 			line-height: 34px;
 		}
-		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
+		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {
 			font-size: 16px;
 			font-weight: 400;
 			letter-spacing: 1.5px;
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}*/
-		
+
 		ul#menu-main-menu ul {
 			list-style-type: none;
 			margin: 5px 0 5px 8px;
-			border-left: 1px solid #fff;	
+			border-left: 1px solid #fff;
 		}
 			ul#menu-main-menu ul li {
 				margin-left: 20px;
 			}/*
 			ul#menu-main-menu ul li a, ul#menu-main-menu ul li a:hover {
 				font-size: 22px;
-				line-height: 28px;	
+				line-height: 28px;
 			}*/
 
 	@media (max-width: 767px) { /* navbar formatting - smaller text for mobile devices */
 		ul#menu-main-menu {
-			margin: 0 0 9px;	
+			margin: 0 0 9px;
 		}
 		/*ul#menu-main-menu li {
-			line-height: 25px;	
+			line-height: 25px;
 		}
-		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {	
+		ul#menu-main-menu li a, ul#menu-main-menu li a:hover {
 			font-size: 16px;
 			font-weight: 400;
 			letter-spacing: 1px;
@@ -152,7 +152,7 @@ ul.menu {
 			font-size: 14px;
 			color: #fff;
 		}
-		
+
 		ul.menu, ul#menu-main-menu {
 			margin: 0 0 15px 0;
 		}
@@ -161,7 +161,7 @@ ul.menu {
 			font-size: 14px;
 			color: #fff;
 		}*/
-		
+
 	}
 
 div.sidebar_social {
@@ -178,10 +178,10 @@ div.sidebar_social {
 		text-indent: -9999px;
 		width: 36px;
 		height: 36px;
-		background: url('static/img/fsi-social-icons.png') no-repeat;	
+		background: url('static/img/fsi-social-icons.png') no-repeat;
 	}
 		a#sidebar_facebook {
-			background-position: 0px 0px;	
+			background-position: 0px 0px;
 		}
 		a#sidebar_twitter {
 			background-position: -36px 0px;
@@ -190,12 +190,12 @@ div.sidebar_social {
 address {
 	text-transform: uppercase;
 	font-size: 14px;
-	font-weight: 400;	
+	font-weight: 400;
 	letter-spacing: 1px;
 	padding:/*\**/15px\9;
 	background-color:/*\**/#222\9;
 }
-	@media (min-width: 767px) { 
+	@media (min-width: 767px) {
 		address {
 			padding: 15px;
 			background: rgba(0,0,0,0.6);
@@ -223,7 +223,7 @@ div.navbar {
 	div.navbar, div#mobile_footer { /* stupid IE fix */
 		display:/*\**/none\9;
 	}
-	
+
 div#mobile_footer {
 	max-width: 320px;
 	margin: auto;
@@ -270,10 +270,10 @@ div#rightcol-content {
 		div#rightcol-content a:hover {
 			color: #3d59ab;
 		}
-	
-	@media (min-width: 768px) {	
+
+	@media (min-width: 768px) {
 		div.post-content {
-			padding-top: 132px !important;	
+			padding-top: 132px !important;
 		}
 	}
 	article a.news-back {
@@ -297,12 +297,12 @@ div#rightcol-content {
 				margin-top: 20px;
 			}
 		}
-	div#home article h2 { 
+	div#home article h2 {
 		font-weight: bold;
 		font-size: 24px;
 		line-height: 36px;
 	}
-	
+
 	div.contentwrap {
 		padding: 150px 30px 60px 30px;
 		max-width: 75%;
@@ -313,7 +313,7 @@ div#rightcol-content {
 				max-width: 100%;
 			}
 		}
-	
+
 	div.contentwrap article p.header-img-wrap {
 		margin: 10px 0;
 		text-align: center;
@@ -322,18 +322,18 @@ div#rightcol-content {
 /* Post lists */
 
 div.post_list {
-	overflow: hidden;	
+	overflow: hidden;
 	margin: 20px 0;
 }
 
 	div.post_list img {
 		float: left;
-		border: 0;	
+		border: 0;
 		padding: 0 10px 10px 0;
 	}
-	
+
 	div.post_list h3 a, div.post_list h3 a:hover {
-		color: #000;	
+		color: #000;
 	}
 
 div#post_navigation {
@@ -353,7 +353,7 @@ div#post_navigation {
 /* Personnel Lists */
 
 table {
-	margin-top: 10px;	
+	margin-top: 10px;
 }
 
 .table-striped tbody tr td, .table-striped tbody tr th {
@@ -386,7 +386,7 @@ table.table-striped tr td.phones ul li {
 	vertical-align: top;
 }
 	table.table-striped tr td.phones ul li:last-child {
-		margin-bottom: 0;	
+		margin-bottom: 0;
 	}
 
 /* Personnel Lists for tablets/phones - responsive table guide via css-tricks.com/responsive-data-tables/ */
@@ -394,11 +394,11 @@ table.table-striped tr td.phones ul li {
 @media (max-width: 767px) {
 	/* Shrinkable bootstrap tables for tablets/phones.
 	Responsive table guide via css-tricks.com/responsive-data-tables/ */
-	table.table.table-striped, 
-	.table.table-striped thead, 
-	.table.table-striped tbody, 
-	.table.table-striped th, 
-	.table.table-striped td, 
+	table.table.table-striped,
+	.table.table-striped thead,
+	.table.table-striped tbody,
+	.table.table-striped th,
+	.table.table-striped td,
 	.table.table-striped tr {
 		display: block;
 	}
@@ -419,10 +419,10 @@ table.table-striped tr td.phones ul li {
 	.table.table-striped tbody tr td:empty {
 		display: none;
 	}
-	.table.table-striped td, 
-	.table.table-striped td.name, 
-	.table.table-striped td.email, 
-	.table.table-striped td.job_title, 
+	.table.table-striped td,
+	.table.table-striped td.name,
+	.table.table-striped td.email,
+	.table.table-striped td.job_title,
 	.table.table-striped td.phones {
 		width: auto;
 	}
@@ -433,7 +433,7 @@ table.table-striped tr td.phones ul li {
 		border-top: 0;
 	}
 	.table.table-striped tbody tr td ul {
-		margin-bottom: 0;	
+		margin-bottom: 0;
 	}
 	.table.table-striped td.phones ul li {
 		line-height: 16px;
@@ -450,13 +450,13 @@ div#personnel-info {
 		list-style-type: none;
 		margin-left: -25px;
 	}
-	
+
 /* Image Captions/Galleries */
 
 p.wp-caption-text {
 	font-weight: bold;
 	font-size: 0.85em;
-	text-align: center;	
+	text-align: center;
 }
 
 dl.gallery-item {
@@ -467,7 +467,7 @@ div.gallery img {
 }
 
 div.gallery-columns-2 {
-	width: 45%;	
+	width: 45%;
 }
 div.gallery-columns-3 {
 	width: 30%;

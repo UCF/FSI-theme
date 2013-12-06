@@ -4,7 +4,7 @@
 #define('DEBUG', True);                  # Always on
 #define('DEBUG', False);                 # Always off
 define('DEBUG', isset($_GET['debug'])); # Enable via get parameter
-define('THEME_URL', get_bloginfo('stylesheet_directory'));
+define('THEME_URL', get_stylesheet_directory_uri());
 define('THEME_ADMIN_URL', get_admin_url());
 define('THEME_DIR', get_stylesheet_directory());
 define('THEME_INCLUDES_DIR', THEME_DIR.'/includes');
@@ -318,19 +318,16 @@ Config::$links = array(
 
 Config::$styles = array(
 	array('admin' => True, 'src' => THEME_CSS_URL.'/admin.css',),
-	//'http://universityheader.ucf.edu/bar/css/bar.css',
 	THEME_STATIC_URL.'/bootstrap/build/css/bootstrap.css',
 	THEME_STATIC_URL.'/bootstrap/build/css/bootstrap-responsive.css',
-	//THEME_CSS_URL.'/webcom-base.css',
 	get_bloginfo('stylesheet_url'),
 );
 
 
 Config::$scripts = array(
 	array('admin' => True, 'src' => THEME_JS_URL.'/admin.js',),
-	array('name' => 'jquery', 'src' => 'http://code.jquery.com/jquery-1.7.1.min.js',),
+	array('name' => 'jquery', 'src' => '//code.jquery.com/jquery-1.7.1.min.js',),
 	array('name' => 'bootstrap',  'src' => 	THEME_STATIC_URL.'/bootstrap/build/js/bootstrap.min.js',),
-	//array('name' => 'modernizr-media-queries',  'src' => THEME_JS_URL.'/modernizr.2.5.3.mediaqueries.js',),
 	array('name' => 'base-script',  'src' => THEME_JS_URL.'/webcom-base.js',),
 	array('name' => 'theme-script', 'src' => THEME_JS_URL.'/script.js',),
 );
@@ -359,7 +356,7 @@ if ($theme_options['bw_verify']){
 
 
 /**
- * Sets default menu_order value to 999 for new posts - not 
+ * Sets default menu_order value to 999 for new posts - not
  * the most graceful method, but it needs to not be 0 so that people
  * with a specific order will appear first in org group listings
  **/
@@ -373,3 +370,11 @@ function person_menu_order_default( $data, $postarr ) {
 	}
 	return $data;
 }
+
+function protocol_relative_attachment_url($url, $id) {
+    if (is_ssl()) {
+        $url = str_replace('http://', 'https://', $url);
+    }
+    return $url;
+}
+add_filter('wp_get_attachment_url', 'protocol_relative_attachment_url');
